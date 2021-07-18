@@ -46,7 +46,7 @@ for segment in range(19):
         item_data["Price"] = JSONDataPrice
         temp.append(item_data)
         with open("twitter_record.json","w") as f:
-            tweet = fragmentedNews["title"] + " Price of Bitcoin on " + dtString + " " + fragmentedNews["url"] + " #bitcoin #bitcoinprice #bitcoinnews"   
+            tweet = fragmentedNews["title"] + " \r\n" + "Price of Bitcoin on (" + dtString + ") "+ JSONDataPrice + " USD \n" + fragmentedNews["url"] + " #bitcoin #bitcoinprice #bitcoinnews" 
             api.update_status(tweet)
             json.dump(temp,f,indent=5)
         break
